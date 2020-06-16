@@ -16,7 +16,11 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
+    <%= render 'layouts/navigation'%>
+
     <%= yield %>
+    <%= render 'layouts/footer'%>
+
 
     <%= javascript_include_tag "https://cdn.omise.co/omise.js" %>
 

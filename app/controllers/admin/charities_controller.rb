@@ -2,7 +2,7 @@ class Admin::CharitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @charities = @app.all_charities
+    @charities = Charity.order(:created_at).all
   end
 
   def new

@@ -15,6 +15,9 @@ gem 'devise'
 gem 'money'
 gem 'omise'
 
+gem 'semantic-ui-sass'
+
+
 group :development, :test do
   gem 'byebug'
 end

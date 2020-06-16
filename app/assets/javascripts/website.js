@@ -1,5 +1,7 @@
 $(document).on("ready", function () {
 
+  OmiseCard.attach();
+
   $("#donate").submit(function () {
 
     var form = $(this);
@@ -10,37 +12,32 @@ $(document).on("ready", function () {
     // Disable the submit button to avoid repeated click.
     form.find("input[type=submit]").prop("disabled", true);
 
-    // Serialize the form fields into a valid card object.
-    var card = {
-      "name": form.find("[data-omise=holder_name]").val(),
-      "number": form.find("[data-omise=number]").val(),
-      "expiration_month": form.find("[data-omise=expiration_month]").val(),
-      "expiration_year": form.find("[data-omise=expiration_year]").val(),
-      "security_code": form.find("[data-omise=security_code]").val()
-    };
 
-    // Send a request to create a token then trigger the callback function once
-    // a response is received from Omise.
-    //
-    // Note that the response could be an error and this needs to be handled 
-    // within the callback.
-    Omise.createToken("card", card, function (statusCode, response) {
-      if (response.object == "error") {
-        // Display an error message.
-        $(".cc_error").html(response.message);
+    const amount = form.find("[name=amount]").val();
+    console.log("AMOUNT", amount);
 
-        // Re-enable the submit button.
-        form.find("input[type=submit]").prop("disabled", false);
-      } else {
-        // Then fill the omise_token.
-        form.find("[name=omise_token]").val(response.id);
-
+    OmiseCard.open({
+      amount: amount * 100,
+      publicKey: 'pkey_test_5k804uo63k2jc8sdwk3',
+      frameLabel: 'Nyan Lin Tun',
+      submitLabel: 'DONATE NOW',
+      submitFormTarget: '#donate',
+      onCreateTokenSuccess: (nonce) => {
+        /* Handler on token or source creation.  Use this to submit form or send ajax request to server */
+        console.log("NONO", nonce);
+        form.find("[name=omise_token]").val(nonce);
         // And submit the form.
         form.get(0).submit();
-      };
+      },
+      onFormClosed: () => {
+        console.log("CLOSED");
+        form.find("input[type=submit]").prop("disabled", false);
+
+        /* Handler on form closure. */
+      },
     });
 
-    // Prevent the form from being submitted;
+    // // Prevent the form from being submitted;
     return false;
 
   });

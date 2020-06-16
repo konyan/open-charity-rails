@@ -7,3 +7,6 @@ charities.each do |_,c|
     app.create_charity(name: c["name"])
   end
 end
+
+
+user = User.create! :email => 'devkonyan@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
