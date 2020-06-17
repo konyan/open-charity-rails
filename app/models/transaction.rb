@@ -1,6 +1,7 @@
-class Transaction < ApplicationRecord
+class Transaction < ActiveRecord::Base
 
   belongs_to :charity
 
   validates :charity_id,:donate_amount,:net_amount,:currency,:trans_id,:direction,:origin, presence:true
+
 end

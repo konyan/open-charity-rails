@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '', to: 'dashboard#index', as: ''
     resources :charities
+    resources :transactions
   end
 
   post 'donate', to: 'website#donate', as: 'donate'

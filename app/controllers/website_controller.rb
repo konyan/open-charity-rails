@@ -23,6 +23,22 @@ class WebsiteController < ApplicationController
           end
           if charge.paid
             charity.credit_amount(charge.amount)
+
+            saveTrans = {charity_id: charity.id,
+                        donate_amount: charge.amount,
+                        net_amount: charge.net,
+                        currency: charge.currency,
+                        trans_id: charge.id,
+                        direction: charge.transaction,
+                        origin: charge.card.brand}
+            puts "Transaction #{charge} , #{saveTrans}"
+            @tran = Transaction.new(saveTrans)
+            @tran.save
+            if @tran.persisted?
+              flash.notice = "Transaction was success"
+            else
+              flash.alert = t(".failure")
+            end
           end
         else
           @token = retrieve_token(params[:omise_token])
@@ -42,6 +58,8 @@ class WebsiteController < ApplicationController
       render :index
       return
     end
+
+
     if !charity
       @token = nil
       flash.now.alert = t(".failure")
@@ -62,5 +80,9 @@ class WebsiteController < ApplicationController
 
   def retrieve_token(token)
     Omise::Token.retrieve(token)
+  end
+
+  def retrieve_transaction(token)
+    Omise::Transaction.retrieve(token)
   end
 end
