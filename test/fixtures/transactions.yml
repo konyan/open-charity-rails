@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  charity: 
+  donate_amount: 1
+  net_amount: 1
+  currency: MyString
+  trans_id: MyString
+  direction: MyString
+  origin: MyString
+
+two:
+  charity: 
+  donate_amount: 1
+  net_amount: 1
+  currency: MyString
+  trans_id: MyString
+  direction: MyString
+  origin: MyString
