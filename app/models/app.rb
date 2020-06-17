@@ -1,7 +1,4 @@
 class App
-  def all_charities
-    Charity.order(:created_at).all
-  end
 
   def build_charity(attributes = {})
     # NOTE currency is for now fixed to THB.

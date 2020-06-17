@@ -27,19 +27,10 @@
             <%= render 'layouts/topnavbar' %>
             <%= render 'layouts/messages'%>
 
-
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-
-
             <!-- Main view  -->
             <%= yield %>
 
             <!-- Footer -->
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
 
             <%= render 'layouts/footer' %>
 

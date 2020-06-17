@@ -14,7 +14,9 @@ class Admin::CharitiesController < ApplicationController
   end
 
   def create
-    @charity = @app.create_charity(charity_params)
+    params = charity_params.merge(total: 0, currency: "THB")
+    @charity = Charity.new(params)
+    @charity.save
 
     if @charity.persisted?
       flash.notice = t(".success")
