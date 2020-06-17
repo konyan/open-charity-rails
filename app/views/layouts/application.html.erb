@@ -32,9 +32,6 @@
       <p class="notice"><%= notice %></p>
     <% end %>
 
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
 
             <!-- Main view  -->
             <%= yield %>
@@ -42,10 +39,6 @@
             <!-- Footer -->
     <% if notice %>
       <p class="notice"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
     <% end %>
 
             <%= render 'layouts/footer' %>

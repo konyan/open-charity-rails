@@ -1,0 +1,20 @@
+<% if obj.errors.any? %>
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>
+                  <%= "#{pluralize(obj.errors.count,"error")}"%>
+                </h5>
+            </div>
+            <div class="ibox-content">
+                <% obj.errors.full_messages.each do |msg| %>
+                  <div class="alert alert-danger">
+                      <%= msg%>
+                  </div>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+<% end %>

@@ -1,12 +1,16 @@
 class Admin::CharitiesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_charity, only: [:show, :destroy]
 
   def index
     @charities = Charity.order(:created_at).all
   end
 
+  def show
+  end
+
   def new
-    @charity = @app.build_charity
+    @charity = Charity.new
   end
 
   def create
@@ -21,9 +25,19 @@ class Admin::CharitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @charity.destroy
+    flash[:danger] = "Charity was successfully deleted"
+    redirect_to admin_charities_path
+  end
+
   private
 
   def charity_params
     params.require(:charity).permit(:name, :description)
+  end
+
+  def set_charity
+    @charity = Charity.find(params[:id])
   end
 end
