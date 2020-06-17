@@ -15,8 +15,11 @@ gem 'devise'
 gem 'money'
 gem 'omise'
 
-gem 'semantic-ui-sass'
-
+gem 'jquery-rails'
+gem 'hirb'
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'byebug'

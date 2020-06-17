@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    get '', to: 'admin#index', as: ''
+    get '', to: 'dashboard#index', as: ''
     resources :charities
   end
 
