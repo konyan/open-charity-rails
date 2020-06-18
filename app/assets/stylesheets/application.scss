@@ -14,12 +14,9 @@
  *= require animate/animate.css
  *= require font-awesome
  *= require style.scss
+  *= require website.scss
  *= require transactions.scss
- *= require website.scss
  *= require toastr/toastr.min.css
  *= require summernote/summernote-bs3.css
  *= require summernote/summernote.css
  */
-
- @import "bootstrap-sprockets";
-@import "bootstrap";
