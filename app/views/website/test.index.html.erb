@@ -1,0 +1,39 @@
+
+
+
+<div class="ui main text container">
+<%= form_tag donate_path, id: "donate" do %>
+  <div class="ui form">
+    <div class="grouped fields">
+      <label>Pick a charity:</label>
+      <% Charity.order(:created_at).all.each do |charity| %>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <%= radio_button_tag :charity, charity.id %>
+            <%= label_tag "charity_#{charity.id}", charity.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ui right labeled input">
+    <%= label_tag :amount, "฿" ,class:"ui label" %>
+     <%= number_field_tag :amount, 500, placeholder:"Amount" %>
+    <div class="ui basic label">THB</div>
+  </div>
+
+    <%= hidden_field_tag :omise_token %>
+    <%= hidden_field_tag :omise_source %>
+
+  <div>
+     <%= button_tag(type: 'submit', class: "my-btn ui youtube button") do %>
+        <i class="smile outline icon"></i>
+        DOATE TODAY
+     <%end %>
+    <span class="cc_error"></span>
+  </div>
+
+<% end %>
+
+  </div>
