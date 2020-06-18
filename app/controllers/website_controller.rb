@@ -30,7 +30,8 @@ class WebsiteController < ApplicationController
                         currency: charge.currency,
                         trans_id: charge.id,
                         direction: charge.transaction,
-                        origin: charge.card.brand}
+                        origin: charge.card.brand,
+                      description: params[:description]}
             puts "Transaction #{charge} , #{saveTrans}"
             @tran = Transaction.new(saveTrans)
             @tran.save

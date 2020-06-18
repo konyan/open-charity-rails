@@ -21,4 +21,6 @@
 //= require peity/jquery.peity.min.js
 //= require slimscroll/jquery.slimscroll.min.js
 //= require toastr/toastr.min.js
+//= require blueimp/jquery.blueimp-gallery.min.js
+//= require slick/slick.min.js
 //= require inspinia.js

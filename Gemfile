@@ -17,9 +17,10 @@ gem 'omise'
 
 gem 'jquery-rails'
 gem 'hirb'
-gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'toastr-rails'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
 
 group :development, :test do
   gem 'byebug'

@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .my-btn{
   margin-top: 16px !important;
 }
@@ -29,24 +28,27 @@ background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, F
   flex-basis: 100%;
   flex: 2;
   height: 100%;
-  transform: translateX(-26%) skew(-16deg);
+  transform: translateX(-16%) skew(-16deg);
   -webkit-box-shadow: 4px 1px 10px 0px rgba(50, 50, 50, 0.35);
 -moz-box-shadow:    4px 1px 10px 0px rgba(50, 50, 50, 0.35);
 box-shadow:         4px 1px 10px 0px rgba(50, 50, 50, 0.35);
 
 
   .left-container{
-    transform: translateX(18%) skew(16deg);
+    transform: translateX(8%) skew(16deg);
     padding: 32px;
-
-
+    text-align: left;
     .header{
       display: block;
-      margin: 32px 26%;
+      margin: 32px 30%;
       font-size: 24px;
       font-size: 500;
-      width: 100%;;
+      width: 100%;
       color: white;
+    }
+
+    .wish-container{
+      margin-top: 6rem;
     }
   }
 
@@ -56,6 +58,7 @@ box-shadow:         4px 1px 10px 0px rgba(50, 50, 50, 0.35);
   color: white;
   font-size: 40px;
   font-weight: bold;
+  margin-left: 3rem;
 }
 
 .right-column{
@@ -64,3 +67,24 @@ box-shadow:         4px 1px 10px 0px rgba(50, 50, 50, 0.35);
   flex-basis: 100%;
   flex: 1;
 }
+
+.pt-3{
+  margin-top: 6rem;
+}
+
+.charity-title{
+  padding: 3rem 0;
+  font-size: 28px;
+  color: black;
+  font-weight: 500;
+
+
+}
+
+.field{
+    padding: 6px;
+  }
+
+  .my-wish{
+    margin-top: 3rem;
+  }

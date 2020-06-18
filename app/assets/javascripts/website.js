@@ -1,5 +1,15 @@
 $(document).on("ready", function () {
 
+
+  $('.slick_demo_1').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    adaptiveHeight: true
+  });
+
   OmiseCard.attach();
 
   $("#donate").submit(function () {
