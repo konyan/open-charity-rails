@@ -38,6 +38,9 @@ $(document).on("ready", function () {
         form.find("[name=omise_token]").val(nonce);
         // And submit the form.
         form.get(0).submit();
+
+        $('#myModal').modal('show')
+
       },
       onFormClosed: () => {
         console.log("CLOSED");

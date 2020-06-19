@@ -69,7 +69,7 @@ class WebsiteController < ApplicationController
     end
     if charge.paid
       flash.notice = t(".success")
-      redirect_to root_path
+      # redirect_to root_path
     else
       @token = nil
       flash.now.alert = t(".failure")
